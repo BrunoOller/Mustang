@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Great+Vibes&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+a
+{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover
+{
+    opacity: 0.7;
+}
+
+.logo
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    letter-spacing: 4px;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(-350deg, black 35%, rgb(24, 24, 24) 99%);
+    height: 10vh;
+}
+
+.nav-list
+{
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li
+{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu
+{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div
+{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px)
+{
+    body
+    {
+        overflow-x: hidden;
+    }
+    .nav-list
+    {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: 0.3s ease-in;
+    }
+    .nav-list li
+    {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu
+    {
+        display: block;
+    }
+}
+
+.nav-list.active
+{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade
+{
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1
+{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2
+{
+    opacity: 0;
+}
+
+.mobile-menu.active .line3
+{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    background: url(../img/f.png) no-repeat center center;
+    background-size: cover;
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: #fff;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container .card
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 300px;
+    background-color: rgb(26, 26, 26);
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(75, 75, 75, 0.403);
+    transition: 0.5s;
+}
+
+.container .card:hover
+{
+    height: 500px;
+}
+
+.container .card .img8x
+{
+    position: absolute;
+    top: 20px;
+    width: 400px;
+    height: 250px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container .card:hover .img8x
+{
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(122, 122, 122, 0.196);
+}
+
+.container .card .img8x img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card .content
+{
+    position: absolute;
+    top: 270px;
+    width: 100%;
+    padding: 0 30px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.container .card:hover .content
+{
+    top: 150px;
+    height: 300px;
+}
+
+.container .card .content h2
+{
+    font-size: 1.5em;
+    font-weight: 100;
+    color: rgb(238, 238, 238);
+}
+
+.container .card .content p
+{
+    padding-top: 15px;
+    color: white;
+    font-size: 1.05em;
+}
+
+.container .card .content .preco
+{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.container .card .content a
+{
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: red;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
